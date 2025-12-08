@@ -16,6 +16,10 @@ public struct Grid {
         return nodes[y * width + x]
     }
 
+    public func nodesAt(y: Int) -> [Node] {
+        Array(nodes[y * width..<y * width + width])
+    }
+
     public func nodeAt(point p: Vec) -> Node? {
         guard contains(point: p) else { return nil }
         return nodes[p.y * width + p.x]
